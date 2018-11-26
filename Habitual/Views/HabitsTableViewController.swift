@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class HabitsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
