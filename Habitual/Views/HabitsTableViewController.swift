@@ -10,17 +10,23 @@ import UIKit
 
 class HabitsTableViewController: UITableViewController {
     
-    var names: [String] = ["Alan", "Adriana", "Adam", "Anne", "Mitchell", "Dani"]
+    var habits: [Habit] = [
+        Habit(title: "Go to bed before 10pm", image: Habit.Images.book),
+        Habit(title: "Drink 8 glasses of Water", image: Habit.Images.book),
+        Habit(title: "Commit Today!", image: Habit.Images.book),
+        Habit(title: "Stand up every hour", image: Habit.Images.book)
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupNavBar()
+//        setupNavBar()
+  
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        return habits.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,23 +36,25 @@ class HabitsTableViewController: UITableViewController {
         } else {
             cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
-        let name = names[indexPath.row]
-        cell.textLabel?.text = name
+        let habit = habits[indexPath.row]
+        cell.textLabel?.text = habit.title
         return cell
     }
 }
 
-extension HabitsTableViewController {
-    
-    func setupNavBar() {
-        title = "Habitual"
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pressAddHabit(_:)))
-        navigationItem.rightBarButtonItem = addButton
-    }
-    
-    @objc func pressAddHabit(_ sender: UIBarButtonItem) {
-        names.insert("Hello, World!", at: 0)
-        let topIndexPath = IndexPath(row: 0, section: 0)
-        tableView.insertRows(at: [topIndexPath], with: .automatic)
-    }
-}
+//extension HabitsTableViewController {
+//    func setupNavBar() {
+//        title = "Habitual"
+//        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pressAddHabit(_:)))
+//        navigationItem.rightBarButtonItem = addButton
+//        navigationItem.leftBarButtonItem = addButton
+//    }
+//    
+//    @objc func pressAddHabit(_ sender: UIBarButtonItem) {
+//        names.insert("YÜÜT", at: 0)
+//        let topIndexPath = IndexPath(row: 0, section: 0)
+//        tableView.insertRows(at: [topIndexPath], with: .automatic)
+//    }
+//}
+
+
