@@ -15,6 +15,8 @@
 		28AA6CE221ABA70C00568247 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA6CE121ABA70C00568247 /* UIViewControllerExtensions.swift */; };
 		28FE98D021B1023000625A20 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FE98CF21B1023000625A20 /* Habit.swift */; };
 		28FE98D321B107E900625A20 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FE98D221B107E900625A20 /* DateExtension.swift */; };
+		28FE98D621B1154B00625A20 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FE98D421B1154B00625A20 /* HabitTableViewCell.swift */; };
+		28FE98D721B1154B00625A20 /* HabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28FE98D521B1154B00625A20 /* HabitTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		28AA6CE121ABA70C00568247 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		28FE98CF21B1023000625A20 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		28FE98D221B107E900625A20 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		28FE98D421B1154B00625A20 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
+		28FE98D521B1154B00625A20 /* HabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 			children = (
 				28AA6CDC21ABA5B400568247 /* HabitsTableViewController.swift */,
 				28AA6CDD21ABA5B400568247 /* HabitsTableViewController.xib */,
+				28FE98D421B1154B00625A20 /* HabitTableViewCell.swift */,
+				28FE98D521B1154B00625A20 /* HabitTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,6 +155,7 @@
 			files = (
 				28AA6CD521AB8B4F00568247 /* LaunchScreen.storyboard in Resources */,
 				28AA6CDF21ABA5B400568247 /* HabitsTableViewController.xib in Resources */,
+				28FE98D721B1154B00625A20 /* HabitTableViewCell.xib in Resources */,
 				28AA6CD221AB8B4F00568247 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +171,7 @@
 				28FE98D321B107E900625A20 /* DateExtension.swift in Sources */,
 				28AA6CE221ABA70C00568247 /* UIViewControllerExtensions.swift in Sources */,
 				28FE98D021B1023000625A20 /* Habit.swift in Sources */,
+				28FE98D621B1154B00625A20 /* HabitTableViewCell.swift in Sources */,
 				28AA6CCB21AB8B4E00568247 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
