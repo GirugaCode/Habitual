@@ -33,6 +33,7 @@ class HabitsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(persistance.habits.count)
         return persistance.habits.count
     }
     
@@ -52,19 +53,19 @@ class HabitsTableViewController: UITableViewController {
     }
 }
 
-//extension HabitsTableViewController {
-//    func setupNavBar() {
-//        title = "Habitual"
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pressAddHabit(_:)))
-//        navigationItem.rightBarButtonItem = addButton
-//        navigationItem.leftBarButtonItem = addButton
-//    }
-//    
-//    @objc func pressAddHabit(_ sender: UIBarButtonItem) {
-//        habits.insert("YÜÜT", at: 0)
-//        let topIndexPath = IndexPath(row: 0, section: 0)
-//        tableView.insertRows(at: [topIndexPath], with: .automatic)
-//    }
-//}
+extension HabitsTableViewController {
+    func setupNavBar() {
+        title = "Habitual"
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pressAddHabit(_:)))
+        navigationItem.rightBarButtonItem = addButton
+        navigationItem.leftBarButtonItem = addButton
+    }
+
+    @objc func pressAddHabit(_ sender: UIBarButtonItem) {
+        let addHabitVC = AddHabitViewController.instantiate()
+        let navigationController = UINavigationController(rootViewController: addHabitVC)
+        present(navigationController, animated: true, completion: nil)
+    }
+}
 
 
