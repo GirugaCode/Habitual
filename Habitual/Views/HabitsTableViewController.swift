@@ -10,6 +10,8 @@ import UIKit
 
 class HabitsTableViewController: UITableViewController {
     
+    private var persistance = PersistenceLayer()
+    
     var habits: [Habit] = [
         Habit(title: "Go to bed before 10pm", image: Habit.Images.book),
         Habit(title: "Drink 8 glasses of Water", image: Habit.Images.book),
@@ -31,15 +33,22 @@ class HabitsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return habits.count
+        return persistance.habits.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HabitTableViewCell.identifier, for: indexPath) as! HabitTableViewCell
         
-        let habit = habits[indexPath.row]
+        let habit = persistance.habits[indexPath.row]
         cell.configure(habit)
         return cell
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        persistance.setNeedsToReloadHabits()
+        tableView.reloadData()
     }
 }
 
@@ -52,7 +61,7 @@ class HabitsTableViewController: UITableViewController {
 //    }
 //    
 //    @objc func pressAddHabit(_ sender: UIBarButtonItem) {
-//        names.insert("YÜÜT", at: 0)
+//        habits.insert("YÜÜT", at: 0)
 //        let topIndexPath = IndexPath(row: 0, section: 0)
 //        tableView.insertRows(at: [topIndexPath], with: .automatic)
 //    }
