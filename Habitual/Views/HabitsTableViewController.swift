@@ -23,7 +23,7 @@ class HabitsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        setupNavBar()
+        setupNavBar()
         
         tableView.register(
             HabitTableViewCell.nib,
@@ -33,7 +33,7 @@ class HabitsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(persistance.habits.count)
+        
         return persistance.habits.count
     }
     
@@ -58,7 +58,7 @@ extension HabitsTableViewController {
         title = "Habitual"
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pressAddHabit(_:)))
         navigationItem.rightBarButtonItem = addButton
-        navigationItem.leftBarButtonItem = addButton
+
     }
 
     @objc func pressAddHabit(_ sender: UIBarButtonItem) {
